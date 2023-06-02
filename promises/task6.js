@@ -35,3 +35,5 @@ parallelPromisesWithLimit(promises, 3);
 
 
 // console.log('Done!');
+
+// https://maximorlov.com/parallel-tasks-with-pure-javascript/
