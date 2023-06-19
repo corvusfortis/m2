@@ -55,7 +55,7 @@
 // 		else runParalle(); iter()
 
 function parallelWithLimit(arr, limit) {
-  return new Promise((_resolve, _reject) => {
+  return new Promise(_resolve => {
 
   let length = arr.length;
   let curIndex = 0;
@@ -74,14 +74,10 @@ function parallelWithLimit(arr, limit) {
           return;
       }
       console.log("qqqqq STARTT::::::::::::", index);
-      fn && fn()
-          .then((res) => {
+      fn().then((res) => {
               console.log("qqqqq FINISH", index);
               tryRes(res, index)
           })
-          .catch(e => {
-              tryRes({error: e}, index)
-          });
   }
 
   function tryRes(r, index) {
@@ -98,7 +94,7 @@ function parallelWithLimit(arr, limit) {
 }
 
 function delay(ms) {
-  return () => new Promise((resolve, reject) => {
+  return () => new Promise(resolve => {
       setTimeout(() => {
           resolve('Function ms ' + ms)
       }, ms)

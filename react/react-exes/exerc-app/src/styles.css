@@ -1,0 +1,15 @@
+.image {
+  display: block;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  transition: .3s;
+}
+
+.active {
+  display: block;
+  margin: auto;
+  height: 600px;
+  width: 600px;
+  transition: .3s;
+}

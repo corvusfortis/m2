@@ -1,0 +1,11 @@
+.modal__box {
+  background-color: 'white';
+  overflow: 'auto';
+  margin: '0 auto';
+  margin-top: '5%';
+  max-width: '50%';
+  height: '80%';
+  text-align: 'center';
+  display: 'flex';
+  flex-direction: 'column';
+}
