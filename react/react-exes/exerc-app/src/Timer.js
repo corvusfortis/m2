@@ -1,46 +1,30 @@
-import React, { useEffect, useState } from "react";
-
-
-const Timer = () => {
-
-  const [active, setActive] = useState(false);
+import { useState } from "react";
+export default function Timer() {
+  const [count, setCount] = useState(10);
   const [disabled, setDisabled] = useState(false);
-  const [seconds, setSeconds] = useState(10);
 
-  const startTimer = () => {
-    setActive(true);
+  const handleCount = () => {
     setDisabled(true);
+    const intervalId = setInterval(() => {
+      setCount((prevCount) => prevCount - 1);
 
-    setTimeout(() => {
-      setActive(false);
-      setDisabled(false);
-      setSeconds(10);
-    }, 10000)
+      setCount((prevCount) => {
+        if (prevCount <= 1) {
+          clearInterval(intervalId);
+          setDisabled(false);
+          setCount(10);
+        }
+        return prevCount;
+      });
+    }, 500);
   };
 
-  
-
-useEffect(() => {
-  let counter;
-
-  if (active) {
-    counter = setInterval(() => {
-      setSeconds((prev) => prev - 1);
-    }, 1000)
-  }
-
-  return () => {
-    clearInterval(counter);
-  }
-}, [active])
-
-  return(
-    <>
-      <p>{seconds}</p>
-      <button disabled={disabled} onClick={startTimer}>Start</button>
-    </>
-
-  )
+  return (
+    <div className="App">
+      <p>Counter: {count}</p>
+      <button disabled={disabled} onClick={handleCount}>
+        Start
+      </button>
+    </div>
+  );
 }
-
-export default Timer;

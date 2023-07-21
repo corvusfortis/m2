@@ -1,0 +1,23 @@
+td {
+  border: 1px solid black;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.page-button {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.page-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.page-button:active {
+  background-color: white;
+  color: black;
+}

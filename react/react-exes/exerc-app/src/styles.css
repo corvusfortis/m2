@@ -3,7 +3,7 @@
   margin: auto;
   height: 300px;
   width: 300px;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .active {
@@ -11,5 +11,48 @@
   margin: auto;
   height: 600px;
   width: 600px;
-  transition: .3s;
+  transition: 0.3s;
+}
+
+@keyframes enlarge {
+  0% {
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+@keyframes ensmall {
+  0% {
+    width: 400px;
+    height: 400px;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.kf-image {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+}
+
+.kf-image_anim {
+  animation-name: enlarge;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.kf-image_anim-reverse {
+  animation-name: ensmall;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
